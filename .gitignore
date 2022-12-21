@@ -1,0 +1,13 @@
+**/.vscode
+**/__pycache__
+
+**/build
+**/devel
+**/.catkin_workspace
+
+
+ws_catkin/src/moveit_all
+ws_catkin/src/universal_robot
+ws_catkin/src/Universal_Robotis_ROS_Driver
+ws_catkin/src/robotiq
+ws_catkin/src/dual_ur

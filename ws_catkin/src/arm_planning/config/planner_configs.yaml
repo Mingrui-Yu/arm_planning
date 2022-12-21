@@ -1,0 +1,73 @@
+planner_configs:
+  common:
+    pose_distance:
+      pos_weight: 1.0
+      rot_weight: 0.1
+    path_interpolation_step_size: 0.01
+
+  RRT:
+    goal_bias_probability: 0.05
+    rrt_max_iter: 10000
+    extend_max_steps: 1
+    path_smooth_max_iter: 50
+    path_collision_check_step_size: 0.05
+    joint_steer_step_size: 0.1
+    dist_metric: 'weighted_joint_pos'  # distance metric for selecting the neareast node: joint_pos / weighted_joint_pos / links_pos
+    connect_joint_max_dist: 0.2
+
+  RRTConnect:
+    rrt_max_iter: 10000
+    extend_max_steps: 100
+    path_smooth_max_iter: 50
+    path_collision_check_step_size: 0.05
+    joint_steer_step_size: 0.1
+    dist_metric: 'weighted_joint_pos'  # distance metric for selecting the neareast node: joint_pos / weighted_joint_pos / links_pos
+    connect_joint_max_dist: 0.2
+
+  JTRRT:
+    goal_bias_probability: 0.5
+    rrt_max_iter: 10000
+    extend_max_steps: 1
+    path_smooth_max_iter: 50
+    path_collision_check_step_size: 0.05
+    joint_steer_step_size: 0.1
+    jacobian_steer_type: 'transpose'  # 'transpose' / 'inverse'
+    pos_steer_step_size: 0.01
+    angle_steer_step_size: 0.0314
+    dist_metric: 'weighted_joint_pos'  # distance metric for selecting the neareast node: joint_pos / weighted_joint_pos / links_pos
+    connect_joint_max_dist: 0.2
+    connect_tcp_max_dist: 0.1
+
+  IKRRT:
+    new_goal_ik_probability: 0.1
+    rrt_max_iter: 10000
+    extend_max_steps: 100
+    path_smooth_max_iter: 50
+    path_collision_check_step_size: 0.05
+    joint_steer_step_size: 0.1
+    dist_metric: 'weighted_joint_pos'  # distance metric for selecting the neareast node: joint_pos / weighted_joint_pos / links_pos
+    connect_joint_max_dist: 0.2
+    
+  ATACE:
+    rrt_max_iter: 10000
+    extend_max_steps: 10
+    # path_smooth_max_iter: 0  # path smooth cannot be done in ATACE
+    path_collision_check_step_size: 0.05
+    joint_steer_step_size: 0.1
+    pos_steer_step_size: 0.01
+    angle_steer_step_size: 0.0314
+    dist_metric: 'weighted_joint_pos'  # distance metric for selecting the neareast node: joint_pos / weighted_joint_pos / links_pos
+    connect_joint_max_dist: 0.2
+    connect_tcp_max_dist: 0.1
+
+  CBiRRT:
+    new_goal_ik_probability: 0.1
+    rrt_max_iter: 10000
+    extend_max_steps: 100
+    path_smooth_max_iter: 50
+    path_collision_check_step_size: 0.05
+    joint_steer_step_size: 0.1
+    dist_metric: 'weighted_joint_pos'  # distance metric for selecting the neareast node: joint_pos / weighted_joint_pos / links_pos
+    connect_joint_max_dist: 0.2
+    constraint_error_thres: 0.01
+    constraint_projection_max_iter: 100

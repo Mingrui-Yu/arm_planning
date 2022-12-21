@@ -1,0 +1,13 @@
+robot_configs:
+  panda_manipulator:
+    base_link_name: "panda_link0"
+    ee_link_name: "panda_hand_tcp"
+    critical_link_names: ["panda_link0", "panda_link1", "panda_link2", "panda_link3", "panda_link4", "panda_link5", "panda_link6", "panda_link7"]
+    tcp_in_ee_pose:
+      position: [0, 0, 0]
+      orientation: [0, 0, 0, 1] # [x, y, z, w]
+    joint_pos_weight: [1.0, 1.0, 1.0, 1.0, 1.0, 0.2, 0.2]
+    joint_sample_lb: [-2.90, -1.76, -2.90, -3.07, -2.90, -0.02, -2.90] # unit: rad
+    joint_sample_ub: [2.90, 1.76, 2.90, -0.07, 2.90, 3.75, 2.90] # unit: rad
+    
+  

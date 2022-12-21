@@ -1,0 +1,71 @@
+Date : 2022-12-20 09:21:14
+Directory : /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning
+Total : 36 files,  3221 codes, 283 comments, 1161 blanks, all 4665 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| C++      |         32 |      3,087 |        246 |      1,133 |      4,466 |
+| YAML     |          2 |         76 |          1 |          8 |         85 |
+| XML      |          2 |         58 |         36 |         20 |        114 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                               | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                  |         36 |      3,221 |        283 |      1,161 |      4,665 |
+| app                                                                                                                |          4 |        359 |         53 |         95 |        507 |
+| config                                                                                                             |          2 |         76 |          1 |          8 |         85 |
+| include                                                                                                            |         17 |        892 |         55 |        374 |      1,321 |
+| include/arm_planning                                                                                               |         15 |        636 |         27 |        295 |        958 |
+| include/arm_planning/planner                                                                                       |          7 |        340 |          4 |        148 |        492 |
+| include/utils                                                                                                      |          2 |        256 |         28 |         79 |        363 |
+| launch                                                                                                             |          1 |         11 |          0 |          7 |         18 |
+| src                                                                                                                |         11 |      1,836 |        138 |        664 |      2,638 |
+| src/planner                                                                                                        |          7 |      1,404 |         92 |        491 |      1,987 |
++--------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                                                           | language | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning/app/test_1.cpp                              | C++      |         42 |          6 |         24 |         72 |
+| /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning/app/test_2.cpp                              | C++      |        101 |         15 |         25 |        141 |
+| /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning/app/test_3.cpp                              | C++      |        108 |         15 |         23 |        146 |
+| /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning/app/test_4.cpp                              | C++      |        108 |         17 |         23 |        148 |
+| /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning/config/panda_configs.yaml                   | YAML     |         11 |          0 |          2 |         13 |
+| /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning/config/planner_configs.yaml                 | YAML     |         65 |          1 |          6 |         72 |
+| /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning/include/arm_planning/common_include.h       | C++      |         37 |          5 |         10 |         52 |
+| /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning/include/arm_planning/node.h                 | C++      |         19 |          0 |         11 |         30 |
+| /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning/include/arm_planning/planner/atace.h        | C++      |         45 |          1 |         19 |         65 |
+| /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning/include/arm_planning/planner/cbirrt.h       | C++      |         46 |          0 |         20 |         66 |
+| /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning/include/arm_planning/planner/ik_rrt.h       | C++      |         34 |          0 |         17 |         51 |
+| /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning/include/arm_planning/planner/jt_rrt.h       | C++      |         47 |          1 |         19 |         67 |
+| /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning/include/arm_planning/planner/planner_base.h | C++      |        109 |          1 |         41 |        151 |
+| /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning/include/arm_planning/planner/rrt.h          | C++      |         30 |          1 |         17 |         48 |
+| /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning/include/arm_planning/planner/rrt_connect.h  | C++      |         29 |          0 |         15 |         44 |
+| /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning/include/arm_planning/planning_interface.h   | C++      |         32 |          0 |         24 |         56 |
+| /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning/include/arm_planning/planning_request.h     | C++      |         20 |          0 |         11 |         31 |
+| /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning/include/arm_planning/planning_response.h    | C++      |         16 |          0 |         10 |         26 |
+| /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning/include/arm_planning/robot.h                | C++      |        100 |         10 |         38 |        148 |
+| /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning/include/arm_planning/scene.h                | C++      |         29 |          5 |         21 |         55 |
+| /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning/include/arm_planning/visualize.h            | C++      |         43 |          3 |         22 |         68 |
+| /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning/include/utils/ros_utils.h                   | C++      |         42 |          2 |         17 |         61 |
+| /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning/include/utils/utils.h                       | C++      |        214 |         26 |         62 |        302 |
+| /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning/launch/panda_sim_prepare.launch             | XML      |         11 |          0 |          7 |         18 |
+| /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning/package.xml                                 | XML      |         47 |         36 |         13 |         96 |
+| /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning/src/planner/atace.cpp                       | C++      |        229 |         21 |         78 |        328 |
+| /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning/src/planner/cbirrt.cpp                      | C++      |        243 |         14 |         80 |        337 |
+| /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning/src/planner/ik_rrt.cpp                      | C++      |        157 |          6 |         55 |        218 |
+| /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning/src/planner/jt_rrt.cpp                      | C++      |        226 |         12 |         81 |        319 |
+| /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning/src/planner/planner_base.cpp                | C++      |        292 |         29 |        101 |        422 |
+| /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning/src/planner/rrt.cpp                         | C++      |        121 |          5 |         46 |        172 |
+| /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning/src/planner/rrt_connect.cpp                 | C++      |        136 |          5 |         50 |        191 |
+| /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning/src/planning_interface.cpp                  | C++      |         66 |          4 |         23 |         93 |
+| /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning/src/robot.cpp                               | C++      |        245 |         28 |         94 |        367 |
+| /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning/src/scene.cpp                               | C++      |         47 |          5 |         23 |         75 |
+| /home/mingrui/Mingrui/learning/arm_planning/ws_catkin/src/arm_planning/src/visualize.cpp                           | C++      |         74 |          9 |         33 |        116 |
+| Total                                                                                                              |          |      3,221 |        283 |      1,161 |      4,665 |
++--------------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+

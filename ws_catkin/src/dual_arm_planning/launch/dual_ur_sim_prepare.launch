@@ -1,0 +1,18 @@
+<launch>
+
+    <rosparam command="load" file="$(find dual_arm_planning)/config/dual_ur_configs.yaml" />
+    <rosparam command="load" file="$(find dual_arm_planning)/config/planner_configs.yaml" />
+    
+
+    <include file="$(find dual_ur5_robotiq2f85_moveit_config)/launch/demo.launch" >
+        <arg name="use_gui" default="false" />
+        <arg name="use_rviz" default="false" />
+    </include>
+
+    
+    <node name="rviz_node" pkg="rviz" type="rviz" respawn="false" 
+        args="-d $(find dual_arm_planning)/rviz/planning_vis.rviz" output="screen"  >
+    </node>
+
+
+</launch>
