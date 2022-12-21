@@ -34,8 +34,8 @@ Clone the third-party packages:
 ```bash
 $ cd arm_planning/ws_catkin/src
 
+$ git clone https://github.com/ros-planning/panda_moveit_config.git -b noetic-devel
 $ git clone https://github.com/THU-DA-Robotics/universal_robot.git -b calibration_devel
-$ git clone https://github.com/THU-DA-Robotics/Universal_Robots_ROS_Driver.git
 $ git clone https://github.com/THU-DA-Robotics/robotiq.git -b noetic-devel
 $ git clone https://github.com/THU-DA-Robotics/dual_ur.git -b noetic_devel
 ```
