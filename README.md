@@ -76,6 +76,7 @@ $ rosrun arm_planning test_2
 <p align="center">
   <img width="50%" src="docs/single_arm_joint_goal.gif" alt="GIF: single-arm planning with joint-space goals">
 </p>
+
 ![GIF: single-arm planning with joint-space goals](docs/single_arm_joint_goal.gif)
 
 ### Single-arm planning with task-space goals
