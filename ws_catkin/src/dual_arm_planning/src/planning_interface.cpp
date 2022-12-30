@@ -31,7 +31,8 @@ bool PlanningInterface::solve(
     const PlanningRequest &req,
     PlanningResponse &res
 ){
-    dual_arm_ = std::make_shared<DualArm>(nh_, robot_description_name_, req.arm_0_group_name_, req.arm_1_group_name_);
+    dual_arm_ = std::make_shared<DualArm>(nh_, robot_description_name_, req.arm_0_group_name_, 
+        req.arm_1_group_name_, req.dual_arm_group_name_);
 
     psm_->requestPlanningSceneState("/get_planning_scene");
     planning_scene_monitor::LockedPlanningSceneRO lscene(psm_);

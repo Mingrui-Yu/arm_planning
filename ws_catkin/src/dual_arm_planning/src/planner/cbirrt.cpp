@@ -70,6 +70,37 @@ void CBiRRT::loadParams()
 
 
 
+// // -------------------------------------------------------
+// Node::Ptr CBiRRT::generateGoalIKNode(
+//     const Node::Ptr &goal_node,
+//     const Node::Ptr &ref_node
+// ){
+//     Node::Ptr goal_ik_node = std::make_shared<Node>();
+
+//     int iter = 0;
+//     while(ros::ok()){
+//         bool success;
+//         if(ref_node == nullptr){
+//             success = dual_arm_->dualArmTcpRandomIK(
+//                                 goal_node->arm_0_tcp_pose_, goal_node->arm_1_tcp_pose_, 
+//                                 goal_ik_node->arm_0_joint_pos_, goal_ik_node->arm_1_joint_pos_);
+//         }else{
+//             success = dual_arm_->dualArmTcpIK(ref_node->arm_0_joint_pos_, ref_node->arm_1_joint_pos_,
+//                                 goal_node->arm_0_tcp_pose_, goal_node->arm_1_tcp_pose_,
+//                                 goal_ik_node->arm_0_joint_pos_, goal_ik_node->arm_1_joint_pos_);
+//         }
+//         ROS_DEBUG_STREAM("success: " << success);
+//         if(success && !checkNodeCollision(goal_ik_node)){
+//             break;
+//         }
+//         ROS_DEBUG_STREAM("generateGoalIKNode(): iter = " << iter++);
+//     }
+
+//     updateNode(goal_ik_node);
+//     goal_ik_node->note_ = "goal_ik";
+//     return goal_ik_node;
+// }
+
 // -------------------------------------------------------
 Node::Ptr CBiRRT::generateGoalIKNode(
     const Node::Ptr &goal_node,

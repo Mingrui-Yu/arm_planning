@@ -92,7 +92,7 @@ Visualization Manager:
       Marker Topic: /rviz_visual_tools
       Name: MarkerArray
       Namespaces:
-        Text: true
+        {}
       Queue Size: 100
       Value: true
     - Class: moveit_rviz_plugin/PlanningScene
@@ -381,7 +381,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 2.158592700958252
+      Distance: 2.7077386379241943
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -389,17 +389,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: 0.2576732933521271
-        Y: -0.15410374104976654
-        Z: -0.2964901030063629
+        X: 0.2575055658817291
+        Y: 0.03730200231075287
+        Z: -0.3400592505931854
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.0197969675064087
+      Pitch: 0.5297974348068237
       Target Frame: <Fixed Frame>
-      Yaw: 0.3803561329841614
+      Yaw: 0.4103561043739319
     Saved: ~
 Window Geometry:
   Displays:

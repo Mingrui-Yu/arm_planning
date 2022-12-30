@@ -119,7 +119,7 @@ int main(int argc, char** argv){
      * this is more convenient for users to define the start and goal configuration
      * but the start and goal configuration for the planner is still in the joint space
      */
-    DualArm::Ptr dual_arm = std::make_shared<DualArm>(nh, "robot_description", "arm_0", "arm_1");
+    DualArm::Ptr dual_arm = std::make_shared<DualArm>(nh, "robot_description", "arm_0", "arm_1", "dual_arm");
     std::vector<double> arm_0_default_joint_pos{M_PI, -3.0/4.0*M_PI, -1.0/2.0*M_PI, -3.0/4.0*M_PI, 0.0, 0.0};
     std::vector<double> arm_1_default_joint_pos{M_PI, -1.0/4.0*M_PI, 1.0/2.0*M_PI, -1.0/4.0*M_PI, 0.0, 0.0};
 
@@ -148,6 +148,7 @@ int main(int argc, char** argv){
     PlanningResponse res;
     req.arm_0_group_name_ = "arm_0";
     req.arm_1_group_name_ = "arm_1";
+    req.dual_arm_group_name_ = "dual_arm";
     req.arm_0_start_joint_pos_ = Utils::eigenVectorXd2StdVector(arm_0_start_joint_pos);
     req.arm_1_start_joint_pos_ = Utils::eigenVectorXd2StdVector(arm_1_start_joint_pos);
     req.goal_type_ = "joint_pos";

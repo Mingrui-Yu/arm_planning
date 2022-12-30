@@ -40,7 +40,7 @@ int main(int argc, char** argv){
     psm->startStateMonitor();
 
 
-    DualArm::Ptr dual_arm = std::make_shared<DualArm>(nh, ROBOT_DESCRIPTION, "arm_0", "arm_1");
+    DualArm::Ptr dual_arm = std::make_shared<DualArm>(nh, ROBOT_DESCRIPTION, "arm_0", "arm_1", "dual_arm");
     dual_arm->arm_0_->printRobotInfo();
     dual_arm->arm_1_->printRobotInfo();
 
@@ -61,18 +61,15 @@ int main(int argc, char** argv){
 
     ros::Rate rate(1);
     while(ros::ok()){
-        dual_arm->robot_state_->setToRandomPositions(arm_0_joint_model_group);
-        dual_arm->robot_state_->setToRandomPositions(arm_1_joint_model_group);
+        Eigen::VectorXd arm_0_joint_pos = dual_arm->arm_0_->randomJointPos();
+        Eigen::VectorXd arm_1_joint_pos = dual_arm->arm_1_->randomJointPos();
 
-        std::vector<double> arm_0_joint_values, arm_1_joint_values;
-        dual_arm->robot_state_->copyJointGroupPositions("arm_0", arm_0_joint_values);
-        dual_arm->robot_state_->copyJointGroupPositions("arm_1", arm_1_joint_values);
+        dual_arm->arm_0_->robot_state_->setJointGroupPositions(arm_0_joint_model_group, Utils::eigenVectorXd2StdVector(arm_0_joint_pos));
+        dual_arm->arm_1_->robot_state_->setJointGroupPositions(arm_1_joint_model_group, Utils::eigenVectorXd2StdVector(arm_1_joint_pos));
 
-        bool collision = scene->checkRobotCollision(Utils::stdVector2EigenVectorXd(arm_0_joint_values), 
-            Utils::stdVector2EigenVectorXd(arm_1_joint_values));
+        bool collision = scene->checkRobotCollision(arm_0_joint_pos, arm_1_joint_pos);
 
-        visualizer->publishPlanningScene(Utils::stdVector2EigenVectorXd(arm_0_joint_values), 
-            Utils::stdVector2EigenVectorXd(arm_1_joint_values));
+        visualizer->publishPlanningScene(arm_0_joint_pos, arm_1_joint_pos);
         visualizer->publishText(collision ? "collision" : "no collision");
         rate.sleep();
 
@@ -83,12 +80,17 @@ int main(int argc, char** argv){
             dual_arm->arm_1_->robot_state_->getGlobalLinkTransform(dual_arm->arm_1_->arm_ee_link_name_);
 
         Eigen::VectorXd arm_0_ik_joint_pos, arm_1_ik_joint_pos;
-        bool arm_0_success = dual_arm->arm_0_->armEndEffectorIK(Utils::stdVector2EigenVectorXd(arm_0_joint_values), 
-            arm_0_ee_pose, arm_0_ik_joint_pos);
-        bool arm_1_success = dual_arm->arm_1_->armEndEffectorIK(Utils::stdVector2EigenVectorXd(arm_1_joint_values), 
-            arm_1_ee_pose, arm_1_ik_joint_pos);
-        std::cout << "arm_0_success: " << arm_0_success << ", arm_1_success: " << arm_1_success << std::endl;;
 
+        // bool success = dual_arm->dualArmEndEffectorIK(
+        //                             arm_0_joint_pos, arm_1_joint_pos,
+        //                             arm_0_ee_pose, arm_1_ee_pose,
+        //                             arm_0_ik_joint_pos, arm_1_ik_joint_pos);
+        // std::cout << "success: " << success <<  std::endl;
+
+        bool arm_0_success = dual_arm->arm_0_->armEndEffectorIK(arm_0_joint_pos, arm_0_ee_pose, arm_0_ik_joint_pos);
+        bool arm_1_success = dual_arm->arm_1_->armEndEffectorIK(arm_1_joint_pos, arm_1_ee_pose, arm_1_ik_joint_pos);
+        std::cout << "arm_0_success: " << arm_0_success << ", arm_1_success: " << arm_1_success << std::endl;
+        
         visualizer->publishPlanningScene(arm_0_ik_joint_pos, arm_1_ik_joint_pos);
         visualizer->publishText("IK solution");
         rate.sleep();

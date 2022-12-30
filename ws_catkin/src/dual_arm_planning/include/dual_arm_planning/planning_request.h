@@ -13,6 +13,7 @@ public:
 public:
     std::string arm_0_group_name_;
     std::string arm_1_group_name_;
+    std::string dual_arm_group_name_;
 
     std::vector<double> arm_0_start_joint_pos_;
     std::vector<double> arm_1_start_joint_pos_;

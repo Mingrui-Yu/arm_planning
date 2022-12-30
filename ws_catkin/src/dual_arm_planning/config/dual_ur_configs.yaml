@@ -21,5 +21,6 @@ robot_configs:
     joint_pos_weight: [1.0, 1.0, 1.0, 0.2, 0.2, 0.2]
     joint_sample_lb: [1.57, -4.71, -3.14, -4.71, -3.14, -3.14]
     joint_sample_ub: [4.71, 1.57, 3.14, 1.57, 3.14, 3.14]
+
     
   
